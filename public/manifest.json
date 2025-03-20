@@ -1,0 +1,72 @@
+
+{
+  "name": "Rajon Dey – Life Philosophy & Personal Growth",
+  "short_name": "Rajon Dey",
+  "description": "Join Rajon Dey on a journey of self-discovery, personal growth, and meaningful living through insights on productivity, creativity, and mindfulness.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F5F5", 
+  "theme_color": "#A3BFFA", 
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": [
+    "personal growth",
+    "mindfulness",
+    "productivity",
+    "creativity",
+    "lifestyle",
+    "wellness",
+    "spirituality",
+    "music",
+    "web development",
+    "self-improvement",
+    "motivation",
+    "philosophy",
+    "inspiration"
+  ],
+  "lang": "en-US",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "About Rajon",
+      "short_name": "About",
+      "description": "Learn about Rajon Dey’s story and philosophy",
+      "url": "/about",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "Explore Rajon’s creative projects in life, music, and tech",
+      "url": "/projects",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Resources",
+      "short_name": "Resources",
+      "description": "Access articles, videos, and newsletters by Rajon",
+      "url": "/resources",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Connect",
+      "description": "Get in touch with Rajon Dey",
+      "url": "/connect",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

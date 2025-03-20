@@ -1,0 +1,43 @@
+/* src/app/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply font-roboto text-text bg-background leading-relaxed;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-roboto;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-secondary rounded-lg hover:bg-accent transition duration-300;
+  }
+  .btn-secondary {
+    @apply px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-secondary transition duration-300;
+  }
+  .section {
+    @apply py-16 px-4 sm:px-8 max-w-6xl mx-auto;
+  }
+  .divider {
+    @apply border-t border-gray-300 my-8;
+  }
+  .decorative-divider {
+    @apply relative h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent my-12;
+  }
+  .footer-text {
+    @apply font-roboto text-grayText text-sm;
+  }
+  .card {
+    @apply bg-white rounded-lg shadow-sm hover:shadow-lg hover:scale-105 transition duration-300;
+  }
+  .underline-accent {
+    @apply relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-accent;
+  }
+}
