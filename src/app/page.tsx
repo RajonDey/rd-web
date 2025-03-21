@@ -2,28 +2,48 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail } from "lucide-react";
+import HeroSubtitle from "@/components/homepage/HeroSubtitle";
 
 export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="section text-center relative">
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5 pointer-events-none" />
-        <h1 className="text-5xl sm:text-6xl font-bold text-primary animate-fade-in-up">
-          Hey, I’m <span className="underline-accent">Rajon Dey</span>
-        </h1>
-        <p className="text-xl sm:text-2xl mt-4 max-w-2xl mx-auto animate-fade-in-up">
-          Creative Professional | Thought Leader | Aspiring Musician
-        </p>
-        <p className="text-lg mt-4 max-w-2xl mx-auto animate-fade-in-up text-grayText">
-          I craft meaningful experiences through web development, music, and
-          insights on personal growth.
-        </p>
-        <div className="mt-8 animate-fade-in-up">
-          <Link href="/about" className="btn-primary">
-            Discover My Journey
-          </Link>
+      <section className="section text-center relative flex items-center justify-center">
+        {/* Full-Background Video */}
+        {/* <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          preload="metadata"
+        >
+          <source
+            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video> */}
+        {/* Overlay for Text Readability */}
+        {/* <div className="absolute inset-0 bg-black opacity-40 z-10" /> */}
+        {/* Hero Content */}
+        <div className="relative z-20">
+          <h1 className="text-5xl sm:text-6xl font-bold text-primary animate-fade-in-up drop-shadow-md">
+            Hey, I’m <span className="underline-accent">Rajon Dey</span>
+          </h1>
+          <HeroSubtitle />
+          <p className="text-lg mt-4 max-w-2xl mx-auto animate-fade-in-up text-grayText drop-shadow-md">
+            I craft meaningful experiences through web development, music, and
+            insights on personal growth.
+          </p>
+          <div className="mt-8 animate-fade-in-up">
+            <Link
+              href="/about"
+              className="btn-primary bg-primary text-white hover:bg-gray-800 transition"
+            >
+              Discover My Journey
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -57,7 +77,6 @@ export default function Home() {
 
       {/* Latest Posts Section */}
       <section className="section bg-gray-50">
-        <div className="decorative-divider" />
         <h2 className="text-3xl font-bold text-primary text-center mb-8 uppercase tracking-wider">
           Recent Reflections
         </h2>
@@ -97,7 +116,6 @@ export default function Home() {
 
       {/* Projects Section */}
       <section className="section">
-        <div className="decorative-divider" />
         <h2 className="text-3xl font-bold text-primary text-center mb-8 uppercase tracking-wider">
           My Creations
         </h2>
@@ -143,14 +161,13 @@ export default function Home() {
 
       {/* YouTube Section */}
       <section className="section bg-gray-50">
-        <div className="decorative-divider" />
         <h2 className="text-3xl font-bold text-primary text-center mb-8 uppercase tracking-wider">
           Watch & Learn
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="card">
             <Image
-              src="/placeholder.svg" // Placeholder image
+              src="/placeholder.svg"
               alt="YouTube Video 1"
               width={600}
               height={300}
@@ -177,7 +194,7 @@ export default function Home() {
           </div>
           <div className="card">
             <Image
-              src="/placeholder.svg" // Placeholder image
+              src="/placeholder.svg"
               alt="YouTube Video 2"
               width={600}
               height={300}
@@ -206,7 +223,6 @@ export default function Home() {
 
       {/* Newsletter Section */}
       <section className="section text-center">
-        <div className="decorative-divider" />
         <h2 className="text-3xl font-bold text-primary mb-4 uppercase tracking-wider">
           Stay Inspired
         </h2>
@@ -233,41 +249,22 @@ export default function Home() {
         </p>
       </section>
 
-      {/* My Story Section */}
-      <section className="section bg-gray-50">
-        <div className="decorative-divider" />
-        <h2 className="text-3xl font-bold text-primary text-center mb-8 uppercase tracking-wider">
-          My Journey
+      {/* Connect with Me Section */}
+      <section className="section bg-gray-50 text-center">
+        <h2 className="text-3xl font-bold text-primary mb-4 uppercase tracking-wider">
+          Connect with Me
         </h2>
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="md:w-1/2">
-            <p className="text-grayText">
-              I’m Rajon Dey, a creative soul on a mission to inspire. My journey
-              began with a curiosity for technology, leading me to master web
-              development. Along the way, I discovered the power of music and
-              mindfulness to transform lives.
-            </p>
-            <p className="text-grayText mt-4">
-              Through this space, I share my experiences, projects, and thoughts
-              on living intentionally. Let’s embark on this journey together.
-            </p>
-            <Link
-              href="/about"
-              className="text-accent mt-4 inline-block hover:underline"
-            >
-              Learn More
-            </Link>
-          </div>
-          <div className="md:w-1/2">
-            <Image
-              src="/placeholder.svg" // Placeholder image
-              alt="Rajon Dey"
-              width={400}
-              height={400}
-              className="w-full h-64 object-cover rounded-lg"
-              loading="lazy"
-            />
-          </div>
+        <p className="text-lg max-w-2xl mx-auto mb-6 text-grayText">
+          I’d love to hear from you! Whether you have a question, want to
+          collaborate, or just want to say hi, let’s connect.
+        </p>
+        <div className="flex justify-center gap-4">
+          <Link href="/about" className="btn-primary">
+            Learn More About Me
+          </Link>
+          <Link href="/connect" className="btn-secondary">
+            Get in Touch
+          </Link>
         </div>
       </section>
     </div>

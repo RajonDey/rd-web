@@ -72,7 +72,7 @@ export default function Footer() {
             <div className="mt-2">
               <Link
                 href="/connect"
-                className="inline-block px-6 py-2 bg-primary text-secondary rounded-full text-sm font-roboto uppercase hover:bg-gray-800 transition"
+                className="inline-block px-6 py-2 bg-primary text-secondary rounded-md text-sm font-roboto uppercase hover:bg-gray-800 transition"
               >
                 Stay Close!
               </Link>
