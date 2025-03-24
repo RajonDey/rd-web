@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import SchemaOrg from "./SchemaOrg";
 import { staticPages } from "@/data/mock-data";
 import { Roboto } from "next/font/google";
+import Script from "next/script";
 
 // Define Roboto font
 const roboto = Roboto({
@@ -61,11 +62,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Tag Manager - Head */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TXRCDV4Z');`}
+        </Script>
         <SchemaOrg />
       </head>
       <body
         className={`${roboto.className} flex flex-col min-h-screen bg-background text-text`}
       >
+        {/* Google Tag Manager - Noscript */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TXRCDV4Z"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
