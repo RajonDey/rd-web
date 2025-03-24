@@ -18,8 +18,8 @@ const reachLinks = [
 
 const footerLinks = [
   { label: "Terms of Use", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Sitemap", href: "/sitemap" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Sitemap", href: "/sitemap.xml" },
 ];
 
 const socialLinks = [
@@ -98,6 +98,8 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
+        <div className="decorative-divider" />
 
         {/* Social Icons */}
         <div className="flex justify-center space-x-4 mt-6">
