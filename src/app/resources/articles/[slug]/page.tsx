@@ -5,14 +5,18 @@ import { notFound } from "next/navigation";
 import { articles } from "@/data/mock-data";
 import SEO from "@/components/SEO";
 
+// Update the interface to reflect that params is a Promise
 interface ArticlePageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>; // params is a Promise that resolves to { slug: string }
 }
 
 export async function generateMetadata({
   params,
 }: ArticlePageProps): Promise<Metadata> {
-  const article = articles.find((article) => article.slug === params.slug);
+  // Await the params to get the slug
+  const { slug } = await params;
+
+  const article = articles.find((article) => article.slug === slug);
 
   if (!article) {
     return {
@@ -27,7 +31,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${article.title} | Rajon Dey`,
       description: article.description,
-      url: `https://rajondey.com/resources/articles/${article.slug}`, // Updated path
+      url: `https://rajondey.com/resources/articles/${article.slug}`,
       type: "article",
       images: [
         {
@@ -47,9 +51,12 @@ export async function generateMetadata({
   };
 }
 
-export default function ArticlePage({ params }: ArticlePageProps) {
-  console.log("Params:", params);
-  const article = articles.find((article) => article.slug === params.slug);
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  // Await the params to get the slug
+  const { slug } = await params;
+
+  console.log("Params:", { slug });
+  const article = articles.find((article) => article.slug === slug);
   console.log("Found article:", article);
 
   if (!article) {
@@ -61,7 +68,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     "@type": "BlogPosting",
     headline: article.title,
     description: article.description,
-    url: `https://rajondey.com/resources/articles/${article.slug}`, // Updated path
+    url: `https://rajondey.com/resources/articles/${article.slug}`,
     datePublished: article.date,
     author: {
       "@type": "Person",
@@ -92,7 +99,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       <SEO
         title={`${article.title} | Rajon Dey`}
         description={article.description}
-        url={`/resources/articles/${article.slug}`} // Updated path
+        url={`/resources/articles/${article.slug}`}
         structuredData={structuredData}
       />
       <div>
