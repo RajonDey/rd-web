@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { fetchPost, fetchPosts } from "@/lib/wp-api";
 import { WPPost } from "@/types/post";
 import SEO from "@/components/SEO";
-import Image from "next/image";
 
 interface ArticlePageProps {
   params: Promise<{ slug: string }>;
