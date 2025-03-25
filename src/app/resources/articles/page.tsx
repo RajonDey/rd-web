@@ -1,6 +1,6 @@
-// src/app/resources/articles/page.tsx
 import { Metadata } from "next";
 import { resourceSubPages } from "@/data/mock-data";
+import { fetchPosts } from "@/lib/wp-api";
 import SEO from "@/components/SEO";
 import ArticlesClient from "./ArticlesClient";
 
@@ -14,7 +14,12 @@ export const metadata: Metadata = {
   twitter: resourceSubPages.articles.twitter,
 };
 
-export default function Articles() {
+export default async function Articles() {
+  // Fetch all posts on the server side
+  const allPosts = await fetchPosts();
+  const initialPosts = allPosts.slice(0, 3); // Initial set of posts (first 3)
+  const totalPosts = allPosts.length;
+
   // Structured data for ArticleList (for SEO)
   const structuredData = {
     "@context": "https://schema.org",
@@ -36,7 +41,7 @@ export default function Articles() {
         title={resourceSubPages.articles.metaTitle}
         description={resourceSubPages.articles.metaDescription}
         url="/resources/articles"
-        structuredData={structuredData} // Pass structured data to SEO component
+        structuredData={structuredData}
       />
       <div>
         {/* Hero Section */}
@@ -50,8 +55,8 @@ export default function Articles() {
         </section>
         <div className="decorative-divider" />
 
-        {/* Pass the content to the Client Component */}
-        <ArticlesClient />
+        {/* Pass the initial posts and total posts to the Client Component */}
+        <ArticlesClient initialPosts={initialPosts} totalPosts={totalPosts} />
       </div>
     </>
   );

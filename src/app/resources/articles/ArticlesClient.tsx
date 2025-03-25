@@ -1,11 +1,19 @@
-// src/app/resources/articles/ArticlesClient.tsx
 "use client";
 
 import Link from "next/link";
 import { useState } from "react";
-import { articles } from "@/data/mock-data";
+import { WPPost } from "@/types/post";
+// import Image from "next/image";
 
-export default function ArticlesClient() {
+interface ArticlesClientProps {
+  initialPosts: WPPost[];
+  totalPosts: number;
+}
+
+export default function ArticlesClient({
+  initialPosts,
+  totalPosts,
+}: ArticlesClientProps) {
   const categories = [
     { name: "Productivity", slug: "productivity" },
     { name: "Positivity", slug: "positivity" },
@@ -19,10 +27,18 @@ export default function ArticlesClient() {
     { name: "Spirituality", slug: "spirituality" },
   ];
 
-  const [visibleArticles, setVisibleArticles] = useState(3);
+  const [visiblePosts, setVisiblePosts] = useState<WPPost[]>(initialPosts);
+  const [visibleCount, setVisibleCount] = useState(initialPosts.length);
 
-  const loadMore = () => {
-    setVisibleArticles((prev) => prev + 3);
+  const loadMore = async () => {
+    const newCount = visibleCount + 3;
+    setVisibleCount(newCount);
+
+    // Since we're fetching all posts on the server side, we can slice from initialPosts
+    // In a real-world scenario, you might fetch more posts from the API here
+    const allPosts = await fetch("/api/posts").then((res) => res.json());
+    const newPosts = allPosts.slice(0, newCount);
+    setVisiblePosts(newPosts);
   };
 
   return (
@@ -33,14 +49,25 @@ export default function ArticlesClient() {
           Recent Posts
         </h2>
         <div className="space-y-6 max-w-3xl mx-auto">
-          {articles.slice(0, visibleArticles).map((article) => (
-            <div key={article.id} className="card p-6">
+          {visiblePosts.map((post) => (
+            <div key={post.id} className="card p-6">
+              {/* {post.image && (
+                <Image
+                  src={post.image || "/development-blog-placeholder.png"}
+                  alt={post.title.rendered}
+                  fill
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  priority
+                />
+              )} */}
               <h3 className="text-xl font-bold text-primary">
-                {article.title}
+                {post.title.rendered}
               </h3>
-              <p className="text-grayText mt-2">{article.description}</p>
+              <p className="text-grayText mt-2">
+                {post.excerpt.rendered.replace(/<[^>]+>/g, "")}
+              </p>
               <Link
-                href={`/resources/articles/${article.slug}`} // Updated path
+                href={`/resources/articles/${post.slug}`}
                 className="text-accent mt-4 inline-block hover:underline"
               >
                 Read More
@@ -48,7 +75,7 @@ export default function ArticlesClient() {
             </div>
           ))}
         </div>
-        {visibleArticles < articles.length && (
+        {visibleCount < totalPosts && (
           <div className="text-center mt-8">
             <button onClick={loadMore} className="btn-primary">
               Load More

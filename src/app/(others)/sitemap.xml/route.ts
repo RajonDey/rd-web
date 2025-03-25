@@ -1,5 +1,5 @@
-// src/app/sitemap.xml/route.ts
-import { staticPages, resourceSubPages, articles } from "@/data/mock-data";
+import { fetchPosts } from "@/lib/wp-api";
+import { staticPages, resourceSubPages } from "@/data/mock-data";
 
 export async function GET() {
   const baseUrl = "https://rajondey.com";
@@ -19,10 +19,11 @@ export async function GET() {
     lastmod: new Date().toISOString().split("T")[0],
   }));
 
-  const articleUrls = articles.map((article) => ({
-    url: `${baseUrl}/resources/articles/${article.slug}`, // Updated path
-    priority: article.priority || 0.7,
-    lastmod: article.date,
+  const posts = await fetchPosts();
+  const articleUrls = posts.map((post) => ({
+    url: `${baseUrl}/resources/articles/${post.slug}`,
+    priority: 0.7,
+    lastmod: post.date.split("T")[0],
   }));
 
   const allUrls = [...staticUrls, ...resourceSubPageUrls, ...articleUrls];
