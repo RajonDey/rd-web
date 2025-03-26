@@ -173,15 +173,23 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <section className="section max-w-3xl mx-auto">
           <div
             className="space-y-6 leading-relaxed text-base sm:text-lg font-normal text-grayText 
-              [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-primary [&_h2]:mt-8 
-              [&_h3]:text-xl [&_h3]:font-medium [&_h3]:text-primary 
-              [&_p]:leading-relaxed 
-              [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:text-grayText 
-              [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:text-grayText 
-              [&_figure]:max-w-full [&_figure]:mx-auto [&_figure]:my-8 
-              [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-md [&_img]:shadow-sm 
-              [&_figcaption]:text-center [&_figcaption]:text-grayText [&_figcaption]:text-sm [&_figcaption]:mt-2 
-              [&_a]:text-accent [&_a]:hover:underline"
+      [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-primary [&_h2]:mt-8 
+      [&_h3]:text-xl [&_h3]:font-medium [&_h3]:text-primary 
+      [&_p]:leading-relaxed 
+      [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:text-grayText 
+      [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:text-grayText 
+      [&_figure]:max-w-full [&_figure]:mx-auto [&_figure]:my-8 
+      [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-md [&_img]:shadow-sm 
+      [&_figcaption]:text-center [&_figcaption]:text-grayText [&_figcaption]:text-sm [&_figcaption]:mt-2 
+      [&_a]:text-accent [&_a]:hover:underline
+      [&_iframe]:relative [&_iframe]:w-full [&_iframe]:h-auto [&_iframe]:aspect-video 
+      [&_iframe]:max-w-full [&_iframe]:rounded-md [&_iframe]:shadow-sm
+      [&_div.wp-video]:w-full [&_div.wp-video]:max-w-full
+      [&_video]:w-full [&_video]:h-auto [&_video]:aspect-video 
+      [&_video]:max-w-full [&_video]:rounded-md [&_video]:shadow-sm
+      [&_ul]:space-y-6 [&_ul_li]:space-y-2 [&_ul_li_br]:hidden
+      [&_ul_li_strong]:block [&_ul_li_strong]:text-primary [&_ul_li_strong]:font-semibold
+      [&_ul_li_img]:mt-4 [&_ul_li_img]:mb-0"
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           />
         </section>

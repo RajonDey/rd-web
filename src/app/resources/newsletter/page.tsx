@@ -66,7 +66,7 @@ export default function Newsletter() {
             Beehiive page to sign up.
           </p>
           <a
-            href="https://beehiiv.com/rajondey" // Replace with your actual Beehiive URL
+            href="https://rd-lifenotes.beehiiv.com/subscribe" 
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary flex items-center justify-center gap-1 mx-auto w-fit"

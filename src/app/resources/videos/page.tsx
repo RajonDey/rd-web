@@ -1,6 +1,5 @@
 // src/app/resources/videos/page.tsx
 import Link from "next/link";
-import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { Metadata } from "next";
 import { resourceSubPages } from "@/data/mock-data";
@@ -58,62 +57,70 @@ export default function Videos() {
         </section>
 
         {/* Videos Section */}
-        <section className="section">
+        <section className="section bg-gray-50">
           <h2 className="text-3xl font-bold text-primary text-center mb-8 uppercase tracking-wider">
             Watch & Learn
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
-              <Image
-                src="/placeholder.svg"
-                alt="Exploring Northeast India"
-                width={600}
-                height={300}
-                className="w-full h-48 object-cover rounded-t-lg"
-                loading="lazy"
-              />
+              <div className="relative w-full pt-[56.25%] rounded-t-md overflow-hidden">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/68td39cRhow?si=7nofoQoHQhI0X8yR&amp;controls=0"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full"
+                  loading="lazy"
+                ></iframe>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-primary">
-                  Exploring Northeast India
+                  #7UsefulJSProjects
                 </h3>
                 <p className="text-grayText mt-2">
-                  A visual journey through the serene landscapes of Northeast
-                  India.
+                  ToDo App using JavaScript with Firebase Realtime Database
                 </p>
                 <a
-                  href="https://youtube.com/@rajon_dey"
+                  href="https://www.youtube.com/@rajon_dey/videos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent mt-4 inline-block hover:underline flex items-center gap-1"
+                  className="text-accent mt-4 inline-block hover:underline"
                 >
-                  Watch Now <ExternalLink size={16} />
+                  Watch More on YouTube
                 </a>
               </div>
             </div>
             <div className="card">
-              <Image
-                src="/placeholder.svg"
-                alt="A Day in My Life"
-                width={600}
-                height={300}
-                className="w-full h-48 object-cover rounded-t-lg"
-                loading="lazy"
-              />
+              <div className="relative w-full pt-[56.25%] rounded-t-md overflow-hidden">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/5Q2Iot1LCNg?si=Fm5KBB7MLddbJJad&amp;controls=0"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full"
+                  loading="lazy"
+                ></iframe>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-primary">
-                  A Day in My Life
+                  #7UsefulJSProjects
                 </h3>
                 <p className="text-grayText mt-2">
-                  A glimpse into my daily routine, balancing creativity and
-                  mindfulness.
+                  Lyric Search App using API with JavaScript
                 </p>
                 <a
-                  href="https://youtube.com/@rajon_dey"
+                  href="https://www.youtube.com/@rajon_dey/videos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent mt-4 inline-block hover:underline flex items-center gap-1"
+                  className="text-accent mt-4 inline-block hover:underline"
                 >
-                  Watch Now <ExternalLink size={16} />
+                  Watch More on YouTube
                 </a>
               </div>
             </div>

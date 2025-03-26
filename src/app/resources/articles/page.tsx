@@ -4,6 +4,7 @@ import { fetchPosts } from "@/lib/wp-api";
 import SEO from "@/components/SEO";
 import ArticlesClient from "./ArticlesClient";
 
+
 export const metadata: Metadata = {
   title: resourceSubPages.articles.metaTitle,
   description: resourceSubPages.articles.metaDescription,

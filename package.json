@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "framer-motion": "^11.11.9",
+    "he": "^1.2.0",
     "lucide-react": "^0.483.0",
     "next": "15.2.3",
     "next-seo": "^6.6.0",
@@ -19,6 +20,7 @@
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
+    "@types/he": "^1.2.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

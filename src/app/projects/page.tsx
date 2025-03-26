@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { staticPages } from "@/data/mock-data";
 import SEO from "@/components/SEO";
+import { ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
   title: staticPages.projects.metaTitle,
@@ -44,7 +45,7 @@ export default function Projects() {
             {/* InspireXcellence */}
             <div className="card p-6 text-center hover:shadow-lg transition-shadow">
               <Image
-                src="/placeholder.svg"
+                src="/project-logos/inspirexcellence.png"
                 alt="InspireXcellence Logo"
                 width={100}
                 height={100}
@@ -60,21 +61,19 @@ export default function Projects() {
               </p>
               <div className="mt-4">
                 <a
-                  href="https://inspirexcellence.com"
+                  href="https://www.youtube.com/@InspireXcellences/shorts"
+                  className="text-accent mt-4 hover:underline flex gap-1 items-center justify-center"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent inline-block hover:underline"
                 >
-                  Visit InspireXcellence
+                  Watch to get Inspire <ExternalLink size={16} />
                 </a>
               </div>
-              <p className="text-sm text-red-500 mt-2">Discontinued</p>
             </div>
 
             {/* Giftlawn */}
             <div className="card p-6 text-center hover:shadow-lg">
               <Image
-                src="/placeholder.svg"
+                src="/project-logos/giftlawn.png"
                 alt="Giftlawn Logo"
                 width={100}
                 height={100}
@@ -87,7 +86,7 @@ export default function Projects() {
               </p>
               <div className="mt-4">
                 <a
-                  href="https://giftlawn.com"
+                  href="/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent inline-block hover:underline"
@@ -101,7 +100,7 @@ export default function Projects() {
             {/* CodeByRajon */}
             <div className="card p-6 text-center hover:shadow-lg">
               <Image
-                src="/placeholder.svg"
+                src="/project-logos/codebyrajon.png"
                 alt="CodeByRajon Logo"
                 width={100}
                 height={100}
@@ -112,12 +111,12 @@ export default function Projects() {
               <p className="text-grayText mt-2">My development portfolio!</p>
               <div className="mt-4">
                 <a
-                  href="https://codebyrajon.com"
+                  href="https://portfolio.rajondey.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent inline-block hover:underline"
+                  className="text-accent mt-4 hover:underline flex gap-1 items-center justify-center"
                 >
-                  Visit My Portfolio
+                  Visit My Portfolio <ExternalLink size={16} />
                 </a>
               </div>
             </div>
@@ -125,7 +124,7 @@ export default function Projects() {
             {/* Devlife */}
             <div className="card p-6 text-center hover:shadow-lg">
               <Image
-                src="/placeholder.svg"
+                src="/project-logos/devlife.png"
                 alt="Devlife Logo"
                 width={100}
                 height={100}
@@ -138,12 +137,11 @@ export default function Projects() {
               </p>
               <div className="mt-4">
                 <a
-                  href="https://devlife.shop"
+                  href="https://devlfe.creator-spring.com/"
+                  className="text-accent mt-4 hover:underline flex gap-1 items-center justify-center"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent inline-block hover:underline"
                 >
-                  Visit Devlife
+                  Shop <ExternalLink size={16} />
                 </a>
               </div>
             </div>

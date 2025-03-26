@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { WPPost } from "@/types/post";
+import he from "he";
 // import Image from "next/image";
 
 interface ArticlesClientProps {
@@ -44,6 +45,23 @@ export default function ArticlesClient({
   return (
     <>
       {/* Articles Section */}
+      {/* Navigation Section */}
+      <section className="section">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <Link
+            href="/resources/articles"
+            className="card p-6 text-center bg-primary text-white"
+          >
+            <h3 className="text-xl font-bold text-white">Articles & Blogs</h3>
+          </Link>
+          <Link href="/resources/videos" className="card p-6 text-center">
+            <h3 className="text-xl font-bold text-primary">Videos</h3>
+          </Link>
+          <Link href="/resources/newsletter" className="card p-6 text-center">
+            <h3 className="text-xl font-bold">Newsletter</h3>
+          </Link>
+        </div>
+      </section>
       <section className="section">
         <h2 className="text-3xl font-bold text-primary text-center mb-8 uppercase tracking-wider">
           Recent Posts
@@ -64,7 +82,19 @@ export default function ArticlesClient({
                 {post.title.rendered}
               </h3>
               <p className="text-grayText mt-2">
-                {post.excerpt.rendered.replace(/<[^>]+>/g, "")}
+                {
+                  he
+                    .decode(
+                      post.excerpt.rendered
+                        .replace(/<[^>]+>/g, "") // Remove HTML tags
+                        .replace(/\[\s*\.{3}\s*\]/g, "") // Remove "[…]" or similar "read more" indicators
+                    )
+                    .trim() // Remove leading/trailing whitespace
+                    .slice(0, 150) + // Optional: Limit to 150 characters for consistency
+                    (post.excerpt.rendered.replace(/<[^>]+>/g, "").length > 150
+                      ? "..."
+                      : "") // Add ellipsis if truncated
+                }
               </p>
               <Link
                 href={`/resources/articles/${post.slug}`}

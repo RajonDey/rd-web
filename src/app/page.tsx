@@ -1,11 +1,12 @@
-// src/app/page.tsx
 import Link from "next/link";
-import Image from "next/image";
 import { Metadata } from "next";
 import { staticPages } from "@/data/mock-data";
+import { fetchPosts } from "@/lib/wp-api"; // Import the fetchPosts function
+import { WPPost } from "@/types/post"; // Import the WPPost type
 import SEO from "@/components/SEO";
-import { Mail } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import HeroSubtitle from "@/components/homepage/HeroSubtitle";
+import he from "he";
 
 export const metadata: Metadata = {
   title: staticPages.home.metaTitle,
@@ -17,7 +18,14 @@ export const metadata: Metadata = {
   twitter: staticPages.home.twitter,
 };
 
-export default function Home() {
+export default async function Home() {
+  // Fetch the latest posts
+  const posts: WPPost[] = await fetchPosts();
+  // Sort posts by date (newest first) and take the top 2
+  const latestPosts = posts
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 2);
+
   return (
     <>
       <SEO
@@ -30,19 +38,19 @@ export default function Home() {
         <section className="section text-center relative flex items-center justify-center">
           {/* Full-Background Video */}
           {/* <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          preload="metadata"
-        >
-          <source
-            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video> */}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            preload="metadata"
+          >
+            <source
+              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video> */}
           {/* Overlay for Text Readability */}
           {/* <div className="absolute inset-0 bg-black opacity-40 z-10" /> */}
           {/* Hero Content */}
@@ -73,27 +81,36 @@ export default function Home() {
             Explore My World
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <Link
-              href="/articles?category=life"
+            <a
+              href="https://development.rajondey.com/"
               className="card p-6 text-center"
+              target="_blank"
             >
+              <h3 className="text-xl font-bold text-primary flex gap-2 items-center justify-center">
+                Web <ExternalLink size={16} />
+              </h3>
+              <p className="text-grayText mt-2">
+                Building the future with code, creativity, and innovation.
+              </p>
+            </a>
+            <Link href="/resources/articles" className="card p-6 text-center">
               <h3 className="text-xl font-bold text-primary">Life</h3>
               <p className="text-grayText mt-2">
                 Reflections on mindfulness, growth, and living with intention.
               </p>
             </Link>
-            <Link href="/web" className="card p-6 text-center">
-              <h3 className="text-xl font-bold text-primary">Web</h3>
-              <p className="text-grayText mt-2">
-                Building the future with code, creativity, and innovation.
-              </p>
-            </Link>
-            <Link href="/music" className="card p-6 text-center">
-              <h3 className="text-xl font-bold text-primary">Music</h3>
+            <a
+              href="https://music.rajondey.com/"
+              className="card p-6 text-center"
+              target="_blank"
+            >
+              <h3 className="text-xl font-bold text-primary flex gap-2 items-center justify-center">
+                Music <ExternalLink size={16} />
+              </h3>
               <p className="text-grayText mt-2">
                 Creating melodies that inspire and connect us.
               </p>
-            </Link>
+            </a>
           </div>
         </section>
 
@@ -103,36 +120,51 @@ export default function Home() {
             Recent Reflections
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="card p-6">
-              <h3 className="text-xl font-bold text-primary">
-                2024: A Year of Growth
-              </h3>
-              <p className="text-grayText mt-2">
-                Looking back on a year of challenges, triumphs, and new
-                beginnings. Here’s what I learned in 2024.
+            {latestPosts.length > 0 ? (
+              latestPosts.map((post) => (
+                <div key={post.id} className="card p-6">
+                  {/* {post.image && (
+                    <Image
+                      src={post.image}
+                      alt={post.title.rendered}
+                      width={600}
+                      height={300}
+                      className="w-full h-48 object-cover rounded-md mb-4"
+                      loading="lazy"
+                    />
+                  )} */}
+                  <h3 className="text-xl font-bold text-primary">
+                    {post.title.rendered}
+                  </h3>
+                  <p className="text-grayText mt-2">
+                    {
+                      he
+                        .decode(
+                          post.excerpt.rendered
+                            .replace(/<[^>]+>/g, "") // Remove HTML tags
+                            .replace(/\[\s*\.{3}\s*\]/g, "") // Remove "[…]" or similar "read more" indicators
+                        )
+                        .trim() // Remove leading/trailing whitespace
+                        .slice(0, 150) + // Optional: Limit to 150 characters for consistency
+                        (post.excerpt.rendered.replace(/<[^>]+>/g, "").length >
+                        150
+                          ? "..."
+                          : "") // Add ellipsis if truncated
+                    }
+                  </p>
+                  <Link
+                    href={`/resources/articles/${post.slug}`}
+                    className="text-accent mt-4 inline-block hover:underline"
+                  >
+                    Read More
+                  </Link>
+                </div>
+              ))
+            ) : (
+              <p className="text-grayText text-center col-span-2">
+                No recent posts available.
               </p>
-              <Link
-                href="/articles/2024-in-memory"
-                className="text-accent mt-4 inline-block hover:underline"
-              >
-                Read More
-              </Link>
-            </div>
-            <div className="card p-6">
-              <h3 className="text-xl font-bold text-primary">
-                2023: Lessons in Resilience
-              </h3>
-              <p className="text-grayText mt-2">
-                A year of unexpected turns taught me the power of adaptability
-                and hope.
-              </p>
-              <Link
-                href="/articles/2023-in-memory"
-                className="text-accent mt-4 inline-block hover:underline"
-              >
-                Read More
-              </Link>
-            </div>
+            )}
           </div>
         </section>
 
@@ -144,41 +176,39 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="card p-6 text-center transform lg:-translate-y-6">
               <h3 className="text-xl font-bold text-primary">
-                Mindful Moments
+                InspireXcellence
               </h3>
               <p className="text-grayText mt-2">
-                A platform to inspire mindfulness and intentional living.
+                Inspiring individuals to achieve personal growth, health,
+                wealth, and happiness.
               </p>
-              <Link
-                href="/projects/mindful-moments"
-                className="text-accent mt-4 inline-block hover:underline"
+              <a
+                href="https://www.youtube.com/@InspireXcellences/shorts"
+                className="text-accent mt-4 hover:underline flex gap-1 items-center justify-center"
+                target="_blank"
               >
-                Explore
-              </Link>
+                Watch to get Inspire <ExternalLink size={16} />
+              </a>
             </div>
             <div className="card p-6 text-center">
-              <h3 className="text-xl font-bold text-primary">CodeCraft</h3>
+              <h3 className="text-xl font-bold text-primary">Devlife</h3>
               <p className="text-grayText mt-2">
-                Innovative web solutions for a digital world.
+                A shop for developer clothes by a developer!
               </p>
-              <Link
-                href="/projects/code-craft"
-                className="text-accent mt-4 inline-block hover:underline"
+              <a
+                href="https://devlfe.creator-spring.com/"
+                className="text-accent mt-4 hover:underline flex gap-1 items-center justify-center"
+                target="_blank"
               >
-                Visit Now
-              </Link>
+                Shop <ExternalLink size={16} />
+              </a>
             </div>
             <div className="card p-6 text-center transform lg:translate-y-6">
-              <h3 className="text-xl font-bold text-primary">Harmony Notes</h3>
+              <h3 className="text-xl font-bold text-primary">Giftlawn</h3>
               <p className="text-grayText mt-2">
-                A musical journey through my original compositions.
+                Making it easy to find the perfect gift for every occasion.
               </p>
-              <Link
-                href="/projects/harmony-notes"
-                className="text-accent mt-4 inline-block hover:underline"
-              >
-                Listen Now
-              </Link>
+              <p className="text-sm text-red-500 mt-2">Discontinued</p>
             </div>
           </div>
         </section>
@@ -190,55 +220,64 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
-              <Image
-                src="/placeholder.svg"
-                alt="YouTube Video 1"
-                width={600}
-                height={300}
-                className="w-full h-48 object-cover rounded-t-lg"
-                loading="lazy"
-              />
+              <div className="relative w-full pt-[56.25%] rounded-t-md overflow-hidden">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/68td39cRhow?si=7nofoQoHQhI0X8yR&amp;controls=0"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full"
+                  loading="lazy"
+                ></iframe>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-primary">
-                  Exploring Northeast India
+                  #7UsefulJSProjects
                 </h3>
                 <p className="text-grayText mt-2">
-                  A visual journey through the serene landscapes of Northeast
-                  India.
+                  ToDo App using JavaScript with Firebase Realtime Database
                 </p>
                 <a
-                  href="https://youtube.com/@rajon_dey"
+                  href="https://www.youtube.com/@rajon_dey/videos"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent mt-4 inline-block hover:underline"
                 >
-                  Watch Now
+                  Watch More on YouTube
                 </a>
               </div>
             </div>
             <div className="card">
-              <Image
-                src="/placeholder.svg"
-                alt="YouTube Video 2"
-                width={600}
-                height={300}
-                className="w-full h-48 object-cover rounded-t-lg"
-                loading="lazy"
-              />
+              <div className="relative w-full pt-[56.25%] rounded-t-md overflow-hidden">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/5Q2Iot1LCNg?si=Fm5KBB7MLddbJJad&amp;controls=0"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full"
+                  loading="lazy"
+                ></iframe>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-primary">
-                  JavaScript for Beginners
+                  #7UsefulJSProjects
                 </h3>
                 <p className="text-grayText mt-2">
-                  Learn JavaScript with these simple, practical projects.
+                  Lyric Search App using API with JavaScript
                 </p>
                 <a
-                  href="https://youtube.com/@rajon_dey"
+                  href="https://www.youtube.com/@rajon_dey/videos"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent mt-4 inline-block hover:underline"
                 >
-                  Watch Now
+                  Watch More on YouTube
                 </a>
               </div>
             </div>
@@ -254,20 +293,21 @@ export default function Home() {
             Join my newsletter for weekly insights on creativity, growth, and
             technology.
           </p>
-          <form className="flex justify-center items-center max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-grow px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-accent"
-              required
+          <div className="flex justify-center items-center max-w-md mx-auto">
+            <iframe
+              src="https://embeds.beehiiv.com/e61a1ad0-5452-4864-b06d-cd3438873253?slim=true"
+              data-test-id="beehiiv-embed"
+              height="52"
+              frameBorder="0"
+              scrolling="no"
+              className="w-full"
+              style={{
+                margin: 0,
+                borderRadius: "0px !important",
+                backgroundColor: "transparent",
+              }}
             />
-            <button
-              type="submit"
-              className="px-4 py-2 bg-primary text-secondary rounded-r-lg hover:bg-accent transition"
-            >
-              <Mail size={20} />
-            </button>
-          </form>
+          </div>
           <p className="text-sm text-grayText mt-4">
             Your privacy matters. Unsubscribe anytime.
           </p>

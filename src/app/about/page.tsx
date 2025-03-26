@@ -59,11 +59,11 @@ export default function About() {
             </div>
             <div className="md:w-1/2">
               <Image
-                src="/placeholder.svg" // Placeholder image
+                src="/rajon.png" 
                 alt="Rajon Dey"
                 width={400}
-                height={400}
-                className="w-full h-64 object-cover rounded-lg shadow-sm"
+                height={300}
+                className="w-full h-72 object-cover rounded-lg shadow-sm"
                 loading="lazy"
               />
             </div>
