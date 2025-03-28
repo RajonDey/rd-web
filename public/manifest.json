@@ -1,12 +1,11 @@
-
 {
   "name": "Rajon Dey – Life Philosophy & Personal Growth",
   "short_name": "Rajon Dey",
-  "description": "Join Rajon Dey on a journey of self-discovery, personal growth, and meaningful living through insights on productivity, creativity, and mindfulness.",
+  "description": "Join Rajon Dey on a journey of self-discovery and personal growth. Explore insights on productivity, creativity, and mindfulness to live a meaningful life—start today!",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F5F5F5", 
-  "theme_color": "#A3BFFA", 
+  "background_color": "#F5F5F5",
+  "theme_color": "#A3BFFA",
   "orientation": "any",
   "icons": [
     {
@@ -30,11 +29,14 @@
     "wellness",
     "spirituality",
     "music",
-    "web development",
     "self-improvement",
     "motivation",
     "philosophy",
-    "inspiration"
+    "inspiration",
+    "self-discovery",
+    "mental health",
+    "life philosophy",
+    "creative living"
   ],
   "lang": "en-US",
   "dir": "ltr",
@@ -44,27 +46,27 @@
     {
       "name": "About Rajon",
       "short_name": "About",
-      "description": "Learn about Rajon Dey’s story and philosophy",
+      "description": "Discover Rajon Dey’s story and life philosophy",
       "url": "/about",
       "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "Projects",
       "short_name": "Projects",
-      "description": "Explore Rajon’s creative projects in life, music, and tech",
+      "description": "See Rajon’s creative projects in music and life",
       "url": "/projects",
       "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "Resources",
       "short_name": "Resources",
-      "description": "Access articles, videos, and newsletters by Rajon",
+      "description": "Explore Rajon’s articles, videos, and newsletters",
       "url": "/resources",
       "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "Connect",
-      "description": "Get in touch with Rajon Dey",
+      "description": "Connect with Rajon Dey to share ideas",
       "url": "/connect",
       "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
     }

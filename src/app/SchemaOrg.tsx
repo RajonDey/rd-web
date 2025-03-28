@@ -1,4 +1,3 @@
-// app/SchemaOrg.tsx
 import Script from "next/script";
 
 const SchemaOrg = () => {
@@ -17,12 +16,36 @@ const SchemaOrg = () => {
       "https://www.youtube.com/@RD-Insights",
     ],
     description:
-      "Rajon Dey shares insights on personal growth, creativity, and meaningful living through his work in web development, music, and life philosophy.",
+      "Rajon Dey shares insights on personal growth, creativity, and mindfulness to inspire meaningful living through life philosophy, music, and creative projects.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Sylhet",
+      addressCountry: "Bangladesh",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Customer Service",
+      email: "rajondeyofficial@gmail.com", // Replace with your actual email
+      url: "https://rajondey.com/connect",
+    },
     worksFor: {
       "@type": "Organization",
       name: "Rajon Dey - Personal Brand",
       url: "https://rajondey.com",
     },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://rajondey.com",
+    },
+    author: [
+      {
+        "@type": "BlogPosting",
+        name: "Resources by Rajon Dey",
+        url: "https://rajondey.com/resources",
+        description:
+          "Articles, videos, and newsletters on personal growth, mindfulness, and creativity by Rajon Dey.",
+      },
+    ],
   };
 
   return (

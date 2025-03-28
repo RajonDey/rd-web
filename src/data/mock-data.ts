@@ -1,14 +1,14 @@
 // src/data/mock-data.ts
 export const staticPages = {
   home: {
-    metaTitle: "Rajon Dey | Personal Growth, Mindfulness & Creativity",
+    metaTitle: "Rajon Dey | Personal Growth & Mindfulness",
     metaDescription:
-      "Explore Rajon Dey's personal website for insights on personal growth, mindfulness, and creativity. Discover articles, videos, and recommendations.",
+      "Join Rajon Dey to explore personal growth, mindfulness, and creativity. Discover articles, videos, and tips for a meaningful life—start your journey today!",
     priority: 1.0,
     openGraph: {
-      title: "Rajon Dey | Personal Growth, Mindfulness & Creativity",
+      title: "Rajon Dey | Personal Growth & Mindfulness",
       description:
-        "Explore Rajon Dey's personal website for insights on personal growth, mindfulness, and creativity.",
+        "Join Rajon Dey to explore personal growth, mindfulness, and creativity. Discover articles, videos, and tips for a meaningful life—start your journey today!",
       url: "https://rajondey.com",
       type: "website",
       images: [
@@ -22,21 +22,21 @@ export const staticPages = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Rajon Dey | Personal Growth, Mindfulness & Creativity",
+      title: "Rajon Dey | Personal Growth & Mindfulness",
       description:
-        "Explore Rajon Dey's personal website for insights on personal growth, mindfulness, and creativity.",
+        "Join Rajon Dey to explore personal growth, mindfulness, and creativity. Discover articles, videos, and tips for a meaningful life—start your journey today!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
   about: {
-    metaTitle: "About Rajon Dey | Software Developer & Digital Creator",
+    metaTitle: "About Rajon Dey | Creative Thinker",
     metaDescription:
-      "Learn about Rajon Dey, a software developer, digital creator, and music lover passionate about personal growth and mindfulness.",
+      "Discover Rajon Dey’s story as a creative thinker and music lover, passionate about personal growth and mindfulness. Learn how I inspire meaningful living!",
     priority: 0.9,
     openGraph: {
-      title: "About Rajon Dey | Software Developer & Digital Creator",
+      title: "About Rajon Dey | Creative Thinker",
       description:
-        "Learn about Rajon Dey, a software developer, digital creator, and music lover passionate about personal growth and mindfulness.",
+        "Discover Rajon Dey’s story as a creative thinker and music lover, passionate about personal growth and mindfulness. Learn how I inspire meaningful living!",
       url: "https://rajondey.com/about",
       type: "website",
       images: [
@@ -50,21 +50,21 @@ export const staticPages = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "About Rajon Dey | Software Developer & Digital Creator",
+      title: "About Rajon Dey | Creative Thinker",
       description:
-        "Learn about Rajon Dey, a software developer, digital creator, and music lover passionate about personal growth and mindfulness.",
+        "Discover Rajon Dey’s story as a creative thinker and music lover, passionate about personal growth and mindfulness. Learn how I inspire meaningful living!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
   projects: {
-    metaTitle: "Projects | Rajon Dey",
+    metaTitle: "Projects | Rajon Dey – Creativity & Music",
     metaDescription:
-      "View Rajon Dey's projects in software development, digital creation, and music, showcasing creativity and innovation.",
+      "Explore Rajon Dey’s creative projects in music and life philosophy, showcasing innovation and inspiration. See how I bring ideas to life—join me today!",
     priority: 0.8,
     openGraph: {
-      title: "Projects | Rajon Dey",
+      title: "Projects | Rajon Dey – Creativity & Music",
       description:
-        "View Rajon Dey's projects in software development, digital creation, and music, showcasing creativity and innovation.",
+        "Explore Rajon Dey’s creative projects in music and life philosophy, showcasing innovation and inspiration. See how I bring ideas to life—join me today!",
       url: "https://rajondey.com/projects",
       type: "website",
       images: [
@@ -78,21 +78,21 @@ export const staticPages = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Projects | Rajon Dey",
+      title: "Projects | Rajon Dey – Creativity & Music",
       description:
-        "View Rajon Dey's projects in software development, digital creation, and music, showcasing creativity and innovation.",
+        "Explore Rajon Dey’s creative projects in music and life philosophy, showcasing innovation and inspiration. See how I bring ideas to life—join me today!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
   resources: {
-    metaTitle: "Resources | Rajon Dey",
+    metaTitle: "Resources | Rajon Dey – Growth & Mindfulness",
     metaDescription:
-      "Access Rajon Dey's resources on personal growth and mindfulness, including articles, videos, newsletters, and recommendations.",
+      "Access Rajon Dey’s resources on personal growth and mindfulness: articles, videos, newsletters, and more to inspire a meaningful life. Explore now!",
     priority: 0.9,
     openGraph: {
-      title: "Resources | Rajon Dey",
+      title: "Resources | Rajon Dey – Growth & Mindfulness",
       description:
-        "Access Rajon Dey's resources on personal growth and mindfulness, including articles, videos, newsletters, and recommendations.",
+        "Access Rajon Dey’s resources on personal growth and mindfulness: articles, videos, newsletters, and more to inspire a meaningful life. Explore now!",
       url: "https://rajondey.com/resources",
       type: "website",
       images: [
@@ -106,21 +106,21 @@ export const staticPages = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Resources | Rajon Dey",
+      title: "Resources | Rajon Dey – Growth & Mindfulness",
       description:
-        "Access Rajon Dey's resources on personal growth and mindfulness, including articles, videos, newsletters, and recommendations.",
+        "Access Rajon Dey’s resources on personal growth and mindfulness: articles, videos, newsletters, and more to inspire a meaningful life. Explore now!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
   connect: {
-    metaTitle: "Connect with Rajon Dey | Personal Growth & Mindfulness",
+    metaTitle: "Connect with Rajon Dey | Mindfulness",
     metaDescription:
-      "Connect with Rajon Dey to share ideas on personal growth and mindfulness. Join my community or reach out directly.",
+      "Connect with Rajon Dey to share ideas on personal growth and mindfulness. Join my community or reach out for inspiration—let’s grow together!",
     priority: 0.8,
     openGraph: {
-      title: "Connect with Rajon Dey | Personal Growth & Mindfulness",
+      title: "Connect with Rajon Dey | Mindfulness",
       description:
-        "Connect with Rajon Dey to share ideas on personal growth and mindfulness. Join my community or reach out directly.",
+        "Connect with Rajon Dey to share ideas on personal growth and mindfulness. Join my community or reach out for inspiration—let’s grow together!",
       url: "https://rajondey.com/connect",
       type: "website",
       images: [
@@ -134,21 +134,21 @@ export const staticPages = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Connect with Rajon Dey | Personal Growth & Mindfulness",
+      title: "Connect with Rajon Dey | Mindfulness",
       description:
-        "Connect with Rajon Dey to share ideas on personal growth and mindfulness. Join my community or reach out directly.",
+        "Connect with Rajon Dey to share ideas on personal growth and mindfulness. Join my community or reach out for inspiration—let’s grow together!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
   privacyPolicy: {
     metaTitle: "Privacy Policy | Rajon Dey",
     metaDescription:
-      "Learn how Rajon Dey handles your data on rajondey.com, including information about affiliate links and third-party services.",
+      "Learn how Rajon Dey handles your data on rajondey.com, including affiliate links and third-party services. Understand your privacy—read now!",
     priority: 0.6,
     openGraph: {
       title: "Privacy Policy | Rajon Dey",
       description:
-        "Learn how Rajon Dey handles your data on rajondey.com, including information about affiliate links and third-party services.",
+        "Learn how Rajon Dey handles your data on rajondey.com, including affiliate links and third-party services. Understand your privacy—read now!",
       url: "https://rajondey.com/privacy-policy",
       type: "website",
       images: [
@@ -164,19 +164,19 @@ export const staticPages = {
       card: "summary_large_image",
       title: "Privacy Policy | Rajon Dey",
       description:
-        "Learn how Rajon Dey handles your data on rajondey.com, including information about affiliate links and third-party services.",
+        "Learn how Rajon Dey handles your data on rajondey.com, including affiliate links and third-party services. Understand your privacy—read now!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
   terms: {
     metaTitle: "Terms of Use | Rajon Dey",
     metaDescription:
-      "Understand the rules for using rajondey.com, including disclaimers for affiliate links and intellectual property.",
+      "Understand the rules for using rajondey.com, including disclaimers for affiliate links and intellectual property. Read the terms now!",
     priority: 0.6,
     openGraph: {
       title: "Terms of Use | Rajon Dey",
       description:
-        "Understand the rules for using rajondey.com, including disclaimers for affiliate links and intellectual property.",
+        "Understand the rules for using rajondey.com, including disclaimers for affiliate links and intellectual property. Read the terms now!",
       url: "https://rajondey.com/terms",
       type: "website",
       images: [
@@ -192,7 +192,7 @@ export const staticPages = {
       card: "summary_large_image",
       title: "Terms of Use | Rajon Dey",
       description:
-        "Understand the rules for using rajondey.com, including disclaimers for affiliate links and intellectual property.",
+        "Understand the rules for using rajondey.com, including disclaimers for affiliate links and intellectual property. Read the terms now!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
@@ -200,14 +200,14 @@ export const staticPages = {
 
 export const resourceSubPages = {
   articles: {
-    metaTitle: "Articles | Rajon Dey",
+    metaTitle: "Articles | Rajon Dey – Personal Growth",
     metaDescription:
-      "Read Rajon Dey's articles on personal growth, mindfulness, and creativity to inspire a meaningful life.",
+      "Read Rajon Dey’s articles on personal growth and mindfulness to inspire a meaningful life. Discover insights and tips—start reading today!",
     priority: 0.8,
     openGraph: {
-      title: "Articles | Rajon Dey",
+      title: "Articles | Rajon Dey – Personal Growth",
       description:
-        "Read Rajon Dey's articles on personal growth, mindfulness, and creativity to inspire a meaningful life.",
+        "Read Rajon Dey’s articles on personal growth and mindfulness to inspire a meaningful life. Discover insights and tips—start reading today!",
       url: "https://rajondey.com/resources/articles",
       type: "website",
       images: [
@@ -221,21 +221,21 @@ export const resourceSubPages = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Articles | Rajon Dey",
+      title: "Articles | Rajon Dey – Personal Growth",
       description:
-        "Read Rajon Dey's articles on personal growth, mindfulness, and creativity to inspire a meaningful life.",
+        "Read Rajon Dey’s articles on personal growth and mindfulness to inspire a meaningful life. Discover insights and tips—start reading today!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
   videos: {
-    metaTitle: "Videos | Rajon Dey",
+    metaTitle: "Videos | Rajon Dey – Mindfulness",
     metaDescription:
-      "Watch Rajon Dey's videos on personal growth, mindfulness, and creativity for inspiration and insights.",
+      "Watch Rajon Dey’s videos on mindfulness and creativity for inspiration and personal growth. Start exploring meaningful insights now!",
     priority: 0.8,
     openGraph: {
-      title: "Videos | Rajon Dey",
+      title: "Videos | Rajon Dey – Mindfulness",
       description:
-        "Watch Rajon Dey's videos on personal growth, mindfulness, and creativity for inspiration and insights.",
+        "Watch Rajon Dey’s videos on mindfulness and creativity for inspiration and personal growth. Start exploring meaningful insights now!",
       url: "https://rajondey.com/resources/videos",
       type: "website",
       images: [
@@ -249,21 +249,21 @@ export const resourceSubPages = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Videos | Rajon Dey",
+      title: "Videos | Rajon Dey – Mindfulness",
       description:
-        "Watch Rajon Dey's videos on personal growth, mindfulness, and creativity for inspiration and insights.",
+        "Watch Rajon Dey’s videos on mindfulness and creativity for inspiration and personal growth. Start exploring meaningful insights now!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
   newsletter: {
-    metaTitle: "Newsletter | Rajon Dey",
+    metaTitle: "Newsletter | Rajon Dey – Insights",
     metaDescription:
-      "Subscribe to Rajon Dey's newsletter for updates on personal growth, mindfulness, and creativity.",
+      "Subscribe to Rajon Dey’s newsletter for updates on personal growth and mindfulness. Get inspired with exclusive insights—join now!",
     priority: 0.8,
     openGraph: {
-      title: "Newsletter | Rajon Dey",
+      title: "Newsletter | Rajon Dey – Insights",
       description:
-        "Subscribe to Rajon Dey's newsletter for updates on personal growth, mindfulness, and creativity.",
+        "Subscribe to Rajon Dey’s newsletter for updates on personal growth and mindfulness. Get inspired with exclusive insights—join now!",
       url: "https://rajondey.com/resources/newsletter",
       type: "website",
       images: [
@@ -277,21 +277,21 @@ export const resourceSubPages = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Newsletter | Rajon Dey",
+      title: "Newsletter | Rajon Dey – Insights",
       description:
-        "Subscribe to Rajon Dey's newsletter for updates on personal growth, mindfulness, and creativity.",
+        "Subscribe to Rajon Dey’s newsletter for updates on personal growth and mindfulness. Get inspired with exclusive insights—join now!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
   recommendations: {
-    metaTitle: "Recommendations | Rajon Dey",
+    metaTitle: "Recommendations | Rajon Dey – Growth",
     metaDescription:
-      "Discover Rajon Dey's top recommendations for personal growth books, mindfulness apps, and productivity tools.",
+      "Discover Rajon Dey’s top recommendations for personal growth: books, mindfulness apps, and tools to live better. Explore now!",
     priority: 0.8,
     openGraph: {
-      title: "Recommendations | Rajon Dey",
+      title: "Recommendations | Rajon Dey – Growth",
       description:
-        "Discover Rajon Dey's top recommendations for personal growth books, mindfulness apps, and productivity tools.",
+        "Discover Rajon Dey’s top recommendations for personal growth: books, mindfulness apps, and tools to live better. Explore now!",
       url: "https://rajondey.com/resources/recommendations",
       type: "website",
       images: [
@@ -305,9 +305,9 @@ export const resourceSubPages = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Recommendations | Rajon Dey",
+      title: "Recommendations | Rajon Dey – Growth",
       description:
-        "Discover Rajon Dey's top recommendations for personal growth books, mindfulness apps, and productivity tools.",
+        "Discover Rajon Dey’s top recommendations for personal growth: books, mindfulness apps, and tools to live better. Explore now!",
       image: "https://rajondey.com/og-image.jpg",
     },
   },
