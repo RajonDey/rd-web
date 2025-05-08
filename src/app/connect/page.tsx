@@ -99,12 +99,12 @@ export default function Connect() {
               </p>
               <div className="flex justify-center gap-4 mt-4">
                 <a
-                  href="https://twitter.com/rajjon_dey"
+                  href="https://www.threads.com/@rajjon.dey"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent hover:underline flex items-center gap-1"
                 >
-                  Twitter <ExternalLink size={16} />
+                  Thread <ExternalLink size={16} />
                 </a>
                 <a
                   href="https://instagram.com/rajjon.dey"

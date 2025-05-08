@@ -5,11 +5,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const descriptors = [
-  "Reader",
-  "Visionary",
-  "Sporty",
-  "Traveler",
-  "Investor"
+  "Lifelong Learner",
+  "Dreamer",
+  "Guitarist",
+  "Seeker",
+  "Solo Coder",
+  "Emotional Soul",
+  "Future Nomad",
+  "Minimalist",
+  "Home Studio Artist",
+  "Spiritual Explorer",
 ];
 
 export default function HeroSubtitle() {
