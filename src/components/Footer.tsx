@@ -118,8 +118,8 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="footer-text text-center mt-6">
-          © 2020 - 2025 | Made with{" "}
-          <Heart className="inline text-red-500" size={14} /> by Rajon Dey
+          © 2020 - {new Date().getFullYear()} | Made with{" "}
+          <Heart className="inline text-black-600" size={14} /> by Rajon Dey
         </p>
       </div>
     </footer>

@@ -1,9 +1,9 @@
 // src/app/about/page.tsx
 // import Link from "next/link";
-import Image from "next/image";
 import { Metadata } from "next";
 import { staticPages } from "@/data/mock-data";
 import SEO from "@/components/SEO";
+import ImageSlider from "@/components/ImageSlider";
 
 export const metadata: Metadata = {
   title: staticPages.about.metaTitle,
@@ -58,14 +58,7 @@ export default function About() {
               </p>
             </div>
             <div className="md:w-1/2">
-              <Image
-                src="/rajon.png" 
-                alt="Rajon Dey"
-                width={400}
-                height={300}
-                className="w-full h-72 object-cover rounded-lg shadow-sm"
-                loading="lazy"
-              />
+              <ImageSlider />
             </div>
           </div>
         </section>
