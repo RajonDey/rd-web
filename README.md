@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rajon Dey - Personal Website
+
+This is the source code for Rajon Dey's personal portfolio website, built using [Next.js](https://nextjs.org) and styled with [Tailwind CSS](https://tailwindcss.com). The website showcases Rajon's professional journey, projects, passions, and digital creations.
+
+## Features
+
+- **About Section**: Learn about Rajon's story, career milestones, and passions.
+- **Projects**: Explore a curated list of professional and personal projects.
+- **Resources**: Access articles, videos, and recommendations shared by Rajon.
+- **SEO Optimized**: Enhanced metadata for better search engine visibility.
+- **Responsive Design**: Fully optimized for all devices.
+
+## Technologies Used
+
+- **Framework**: [Next.js](https://nextjs.org)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com)
+- **Image Optimization**: [Next/Image](https://nextjs.org/docs/api-reference/next/image)
+- **TypeScript**: For type safety and better developer experience.
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ensure you have the following installed:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Node.js](https://nodejs.org/) (v16 or later)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+1. Clone the repository:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/RajonDey/rd-web.git
+   cd rd-web
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-## Deploy on Vercel
+3. Run the development server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+
+## Project Structure
+
+- `src/app`: Contains the main application pages and layouts.
+- `src/components`: Reusable UI components like the header, footer, and image slider.
+- `src/data`: Mock data used across the website.
+- `src/lib`: Utility functions and API integrations.
+- `src/styles`: Global CSS and Tailwind configuration.
+- `public`: Static assets like images and icons.
+
+## Deployment
+
+This project is optimized for deployment on [Vercel](https://vercel.com). To deploy:
+
+1. Push your code to a GitHub repository.
+2. Connect the repository to Vercel.
+3. Follow the deployment instructions on the Vercel dashboard.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+## Contact
+
+For inquiries or feedback, reach out to Rajon Dey:
+
+- **Email**: [hello@rajondey.com](mailto:hello@rajondey.com)
+- **Twitter**: [@rajjon_dey](https://twitter.com/rajjon_dey)
+- **Website**: [rajondey.com](https://rajondey.com)
