@@ -41,3 +41,7 @@
     @apply relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-accent;
   }
 }
+
+p {
+  margin-bottom: 1em;
+}
