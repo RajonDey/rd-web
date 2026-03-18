@@ -82,7 +82,7 @@ export default async function Home() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <a
-              href="https://development.rajondey.com/"
+              href="https://portfolio.rajondey.com/"
               className="card p-6 text-center"
               target="_blank"
             >
