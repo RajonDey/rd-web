@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
         destination: '/resources/articles/2024-in-memory',
         permanent: true,
       },
+      {
+        source: '/cv.pdf',
+        destination: '/rajon-dey-software-engineer.pdf',
+        permanent: true,
+      },
     ]
   },
 }
