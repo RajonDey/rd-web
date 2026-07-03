@@ -5,14 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const descriptors = [
-  "Guitarist",
-  "Minimalist",
+  "Artist",
   "Solo Builder",
-  "Active Trader",
-  "Value Investor",
+  "Guitarist",
+  "Content Creator",
+  "Active Investor",
+  "Minimalist",
   "Mindful Explorer",
   "Lifelong Learner",
-  "Content Creator",
 ];
 
 export default function HeroSubtitle() {
@@ -27,7 +27,7 @@ export default function HeroSubtitle() {
 
   return (
     <div className="text-xl sm:text-2xl mt-4 max-w-2xl mx-auto animate-fade-in-up text-primary white drop-shadow-md">
-      Software Developer |{" "}
+      Software Engineer |{" "}
       <AnimatePresence mode="wait">
         <motion.span
           key={currentDescriptor}

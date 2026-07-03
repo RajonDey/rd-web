@@ -42,6 +42,59 @@ export default function Projects() {
             My Creations
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* IELTSReady */}
+            <div className="card p-6 text-center hover:shadow-lg transition-shadow">
+              <Image
+                src="/project-logos/IELTS-Ready-Logo.png"
+                alt="IELTSReady Logo"
+                width={100}
+                height={100}
+                className="mx-auto mb-4"
+                loading="lazy"
+              />
+              <h3 className="text-xl font-bold text-primary">IELTSReady</h3>
+              <p className="text-grayText mt-2">
+                Online IELTS exam platform for students and coaching centers.
+              </p>
+              <div className="mt-4">
+                <a
+                  href="https://www.ieltsready.org/"
+                  className="text-accent mt-4 hover:underline flex gap-1 items-center justify-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit IELTSReady <ExternalLink size={16} />
+                </a>
+              </div>
+            </div>
+
+            {/* YearInReview */}
+            <div className="card p-6 text-center hover:shadow-lg transition-shadow">
+              <Image
+                src="/project-logos/yearinreview.png"
+                alt="YearInReview Logo"
+                width={100}
+                height={100}
+                className="mx-auto mb-4"
+                loading="lazy"
+              />
+              <h3 className="text-xl font-bold text-primary">YearInReview</h3>
+              <p className="text-grayText mt-2">
+                A calm system between your ambition and your time - plan the
+                year, live the rhythm, and end December with proof.
+              </p>
+              <div className="mt-4">
+                <a
+                  href="https://yearinreview.online/"
+                  className="text-accent mt-4 hover:underline flex gap-1 items-center justify-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit YearInReview <ExternalLink size={16} />
+                </a>
+              </div>
+            </div>
+
             {/* InspireXcellence */}
             <div className="card p-6 text-center hover:shadow-lg transition-shadow">
               <Image
@@ -144,13 +197,6 @@ export default function Projects() {
                   Shop <ExternalLink size={16} />
                 </a>
               </div>
-            </div>
-
-            {/* Next One (Coming Soon) */}
-            <div className="card p-6 text-center hover:shadow-lg transition-shadow flex flex-col justify-center items-center">
-              <h3 className="text-xl font-bold text-primary">Next One!</h3>
-              <p className="text-grayText mt-2">Coming soon...</p>
-              <p className="text-sm text-gray-500 mt-2">In Development</p>
             </div>
           </div>
         </section>

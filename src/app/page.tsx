@@ -60,7 +60,7 @@ export default async function Home() {
             </h1>
             <HeroSubtitle />
             <p className="text-lg mt-4 max-w-2xl mx-auto animate-fade-in-up text-grayText drop-shadow-md">
-              I craft meaningful experiences through web development, music, and
+              I craft meaningful experiences through software development, music, and
               insights on personal growth.
             </p>
             <div className="mt-8 animate-fade-in-up">
