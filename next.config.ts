@@ -1,5 +1,10 @@
 import type { NextConfig } from "next";
 
+const CV_DOC_URL =
+  "https://docs.google.com/document/d/1_4CDSLUAE8K2_QRXg12bkbvPgIrSY8jzJibTDDiyMJA/preview";
+const FRONTEND_CV_DOC_URL =
+  "https://docs.google.com/document/d/1FTe6VOEeQ-6YLV0rboZaTrOGnCkynpp_3k8BKYNKu7M/preview";
+
 const nextConfig: NextConfig = {
   /* config options here */
   async redirects() {
@@ -25,9 +30,24 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/cv',
+        destination: CV_DOC_URL,
+        permanent: false,
+      },
+      {
         source: '/cv.pdf',
-        destination: '/rajon-dey-software-engineer.pdf',
-        permanent: true,
+        destination: CV_DOC_URL,
+        permanent: false,
+      },
+      {
+        source: '/rajon-dey-software-engineer.pdf',
+        destination: CV_DOC_URL,
+        permanent: false,
+      },
+      {
+        source: '/cv/frontend',
+        destination: FRONTEND_CV_DOC_URL,
+        permanent: false,
       },
     ]
   },
